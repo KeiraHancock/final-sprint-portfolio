@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Keira Hancock | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+    <a href="index.html" class="back-btn">
+        <img src="img/back-icon.png" alt="Back" />
+      </a>
+
+  <div class="main-container">
+
+    <!-- Left Side Panel -->
+    <aside class="left-panel">
+      <!-- Profile Icon and Name -->
+      <div class="info-card profile-card">
+        <img src="img/pixel-icon.png" alt="Pixel icon of Keira" class="pixel-icon" />
+        <h2>Keira Hancock</h2>
+      </div>
+
+      <!-- Time and Email -->
+      <div class="row-card">
+        <div class="info-card">
+          <div class="info-item time-box">
+            <div id="day-display">Loading day...</div>
+            <div id="time-display">Loading time...</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-item">
+            <img src="img/email-icon.png" class="folder-img" alt="Email Icon">
+            <a href="mailto:Keira.Hancock@keyin.com">Send me a message!</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- GitHub Link -->
+      <div class="info-card">
+        <div class="info-item">
+          <img src="img/github-icon.png" class="folder-img" alt="GitHub Icon">
+          <a href="https://github.com/KeiraHancock" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div class="info-card">
+        <div class="info-item">
+          <img src="img/location-icon.png" class="folder-img" alt="Location Icon">
+          Newfoundland, Canada
+        </div>
+      </div>
+
+      <!-- About Me -->
+      <div class="info-card bio-card">
+        <p>
+          Hi! I'm Keira, a 22-year-old software development student with a love for clean code and beautiful design. I especially enjoy working with Python and creating visually aesthetic projects. Outside of tech, I’m a lifelong figure skater—I've been on the ice since I was 4, and I'm currently part of a synchronized skating team that recently won gold at the 2025 Skate Canada Cup. I'm also an animal lover (marine life has my heart), and I spend my time staying active, enjoying music, watching horror movies, and making memories with friends.
+        </p>
+      </div>
+    </aside>
+
+    <!-- Right Side Panel -->
+    <section class="right-panel">
+      <div class="projects-box">
+        <div class="projects-header">
+          <h2>My Projects:</h2>
+          <div class="view-toggle-icons">
+            <button onclick="setView('grid')" class="view-btn" title="Grid View">
+              <img src="img/grid-icon.png" class="folder-img2" alt="Grid View Icon">
+            </button>
+            <button onclick="setView('list')" class="view-btn" title="List View">
+              <img src="img/list-icon.png" class="folder-img2" alt="List View Icon">
+            </button>
+          </div>
+        </div>
+
+        <!-- Folder container (populated by JS) -->
+        <div id="project-area" class="project-area grid-view"></div>
+      </div>
+
+
+      <!-- Game Row Wrapper (this is the key fix) -->
+      <div class="game-row">
+        <!-- Memory Game Box -->
+        <div class="game-wrapper">
+            <div class="game-box-header">
+                <img src="img/heart-icon.png" alt="Memory Game Icon">
+                <h4>Card Matching Game</h4>
+              </div>
+              <button class="game-toggle-btn" onclick="toggleGame(this)">Play Match Game!</button>
+          <div class="memory-game hidden" id="memoryGame">
+            <div class="card-grid" id="cardGrid"></div>
+            <button class="reset-btn" onclick="startGame()">Reset</button>
+          </div>
+        </div>
+      
+        <!-- Flower Collector Game -->
+        <div class="game-wrapper">
+            <div class="game-box-header">
+                <img src="img/flower1-icon.png" alt="Flower Game Icon">
+                <h4>Flower Collecting Game</h4>
+              </div>
+              <button class="game-toggle-btn" onclick="toggleFlowerGame(this)">Play Collect Game!</button>
+          <div class="flower-game hidden" id="flowerGame">
+            <div class="flower-grid" id="flowerGrid"></div>
+            <p id="flowerMessage" class="flower-message hidden">🌸 You collected all the flowers! 🌸</p>            
+            <button class="reset-btn" onclick="resetFlowerGame()">Reset</button>
+          </div>
+        </div>
+      </div>      
+
+    </div>
+  
+    </section>
+
+  </div>
+
+  <!-- JavaScript file for all dynamic functionality -->
+  <script src="script.js"></script>
+</body>
+</html>

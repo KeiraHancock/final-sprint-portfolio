@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: url('img/pastel-bg.png') repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.landing-container {
+  text-align: center;
+  color: #ffb6c1;
+  animation: fadeIn 2s ease-in;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 4rem;
+  color: #ffb6c1;
+  text-shadow:
+    0 0 8px #fff8dc,
+    0 0 15px #ffe4ec,
+    0 0 25px #ffffcc,
+    0 0 35px #fff2f8;
+  margin-bottom: 1rem;
+  animation: fadeIn 2s ease-in;
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background: linear-gradient(45deg, #ffc0cb, #ffff99);
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow:
+    0 0 10px #ffd1dc,
+    0 0 20px #ffffcc;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  font-size: 1.2rem;
+  z-index: 1;
+}
+
+.portfolio-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* sparkle animation for hover effect */
+.sparkle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.9;
+  pointer-events: none;
+  animation: sparkleAnim 1s ease-out forwards;
+  z-index: 2;
+  filter: drop-shadow(0 0 6px #fffacd);
+}
+
+@keyframes sparkleAnim {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5) translateY(-30px);
+    opacity: 0;
+  }
+}
+
+/* faded white overlay to soften background */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.4);
+  z-index: 0;
+}
+
+/* little scroll arrow at the bottom of the screen */
+.scroll-arrow {
+  position: absolute;
+  bottom: 30px;
+  font-size: 2rem;
+  color: #fff8dc;
+  animation: bounce 2s infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
